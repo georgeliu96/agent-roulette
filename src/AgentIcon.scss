@@ -1,0 +1,63 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	&.red * {
+		color: #ffa3bd;
+		box-shadow: #ffa3bdbb;
+	}
+
+	&.green * {
+		color: #65e27a;
+		box-shadow: #65e27abb;
+	}
+
+	&.yellow * {
+		color: #fff367;
+		box-shadow: #fff367bb;
+	}
+
+	&.purple * {
+		color: #af83e7;
+		box-shadow: #af83e7bb;
+	}
+
+	&.blue * {
+		color: #88cbfb;
+		box-shadow: #88cbfbbb;
+	}
+
+	&:hover > *:first-child,
+	&.selected > *:first-child {
+		box-shadow: 8px 8px 14px;
+		margin: 4px;
+		width: 88px;
+		height: 88px;
+	}
+
+	&.selected * {
+		font-weight: 700;
+
+		-webkit-text-stroke-width: 1px;
+		-webkit-text-stroke-color: rgb(70, 70, 70);
+	}
+
+	&:hover > *:first-child {
+		box-shadow: #00000011;
+	}
+
+	h3 {
+		font-weight: 400;
+	}
+
+	.icon {
+		width: 96px;
+		height: 96px;
+		border: 1px solid black;
+		border-radius: 4px;
+		box-sizing: border-box;
+		transition: all 0.3s;
+	}
+}

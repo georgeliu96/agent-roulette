@@ -1,0 +1,191 @@
+.App {
+	background-color: #cedee7;
+	overflow: auto;
+	min-height: 100vh;
+	text-align: center;
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+
+	.layout {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		width: 100%;
+		gap: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	> * {
+		width: 85%;
+	}
+
+	h1 {
+		color: black;
+		margin-bottom: 1rem;
+		// font-family: "Chewy";
+		font-size: 4rem;
+	}
+
+	.rightSection {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+	}
+
+	.agentGrid {
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 95%;
+	}
+
+	.buttonsRow {
+		button {
+			width: 10rem;
+			border: none;
+			border-radius: 20px;
+			color: white;
+			font-size: 24px;
+			font-weight: 700;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			transition: all 0.3s;
+			margin: 0 0.5rem;
+			margin-top: 2rem;
+
+			&:first-child {
+				background-image: linear-gradient(
+					to bottom right,
+					#ff3c46,
+					#ff7361
+				);
+			}
+
+			&:nth-child(2) {
+				background-image: linear-gradient(
+					to bottom right,
+					#5f5e5e,
+					#dbd0cf
+				);
+			}
+
+			&:disabled {
+				background-image: none;
+				background-color: lightgray;
+
+				&:hover {
+					cursor: default;
+				}
+			}
+
+			&:hover:not(:disabled) {
+				cursor: pointer;
+
+				&:first-child {
+					background-image: linear-gradient(
+						to bottom right,
+						#ff7361,
+						#ff3c46
+					);
+				}
+
+				&:nth-child(2) {
+					background-image: linear-gradient(
+						to bottom right,
+						#dbd0cf,
+						#5f5e5e
+					);
+				}
+
+				&:first-child {
+					box-shadow: 8px 8px 14px #ff3c46bb;
+				}
+
+				&:nth-child(2) {
+					box-shadow: 8px 8px 14px #5f5e5ebb;
+				}
+			}
+		}
+	}
+
+	.selectNum {
+		margin-bottom: 1rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		label {
+			font-weight: 500;
+			font-size: 20px;
+		}
+
+		select {
+			margin: 1rem;
+			width: 100px;
+			padding: 12px;
+			border: none;
+			border-radius: 8px;
+			background-color: #f1f1f1;
+			font-size: 1.2rem;
+		}
+	}
+
+	.spinToWin {
+		.selectedGrid {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			margin-bottom: 2rem;
+			width: 225px;
+
+			.selectedAgentContainer {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0.4rem 1rem;
+				-webkit-text-stroke-width: 1px;
+				-webkit-text-stroke-color: rgb(70, 70, 70);
+
+				&.red * {
+					color: #ffa3bd;
+				}
+
+				&.green * {
+					color: #65e27a;
+				}
+
+				&.yellow * {
+					color: #fff367;
+				}
+
+				&.purple * {
+					color: #af83e7;
+				}
+
+				&.blue * {
+					color: #88cbfb;
+				}
+
+				.selectedAgent {
+					width: 96px;
+					height: 96px;
+					border: 1px solid black;
+					border-radius: 4px;
+					box-sizing: border-box;
+					background-size: contain;
+					box-shadow: 8px 8px 14px;
+					margin-right: 1rem;
+				}
+			}
+		}
+	}
+}
