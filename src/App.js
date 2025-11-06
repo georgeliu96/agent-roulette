@@ -1,6 +1,7 @@
 import AgentIcon from "./AgentIcon"
 import "./App.scss"
 import SelectedAgents from "./SelectedAgents"
+import Spinner from "./Spinner"
 import { agentsMap } from "./util"
 import { useState, useEffect, useCallback } from "react"
 
@@ -94,6 +95,7 @@ function App() {
 						<button disabled={isSetting} onClick={handleReset}>
 							Reset
 						</button>
+						{isSetting ? <Spinner /> : null}
 					</div>
 				</div>
 			</div>

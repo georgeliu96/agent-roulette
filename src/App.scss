@@ -46,6 +46,9 @@
 	}
 
 	.buttonsRow {
+		position: relative;
+		margin-top: 2rem;
+
 		button {
 			width: 10rem;
 			border: none;
@@ -59,13 +62,12 @@
 			display: inline-block;
 			transition: all 0.3s;
 			margin: 0 0.5rem;
-			margin-top: 2rem;
 
 			&:first-child {
 				background-image: linear-gradient(
 					to bottom right,
-					#ff3c46,
-					#ff7361
+					#138bec,
+					#2145e7
 				);
 			}
 
@@ -92,8 +94,8 @@
 				&:first-child {
 					background-image: linear-gradient(
 						to bottom right,
-						#ff7361,
-						#ff3c46
+						#2145e7,
+						#138bec
 					);
 				}
 
@@ -106,7 +108,7 @@
 				}
 
 				&:first-child {
-					box-shadow: 8px 8px 14px #ff3c46bb;
+					box-shadow: 8px 8px 14px #2145e7bb;
 				}
 
 				&:nth-child(2) {
