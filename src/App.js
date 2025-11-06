@@ -32,7 +32,7 @@ function App() {
 	}
 
 	const setDelay = (startDelay = 250) => {
-		if (startDelay > 1500) {
+		if (startDelay > 800) {
 			setIsSetting(false)
 			setSelected(getRandom())
 		} else {
@@ -44,6 +44,8 @@ function App() {
 	}
 
 	const handleClick = () => {
+		const audio = new Audio("/revolver.mp3")
+		audio.play()
 		setIsSetting(true)
 		setDelay()
 	}
