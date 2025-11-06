@@ -194,6 +194,10 @@
 					white-space: nowrap;
 					text-align: left;
 					left: 120px;
+
+					.editIgn {
+						cursor: pointer;
+					}
 				}
 
 				input {

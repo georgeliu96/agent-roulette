@@ -6,6 +6,14 @@ const SelectedAgents = ({ selected }) => {
 	const currIgns = sessionStorage.getItem("igns")?.split(",") ?? []
 	const [editIdx, setEditIdx] = useState(null)
 
+	const handleInput = (e, idx) => {
+		if (e.key === "Enter") {
+			handleBlur(e, idx)
+		} else if (e.key === "Escape") {
+			handleBlur({ target: { value: currIgns?.[idx] ?? "" } }, idx)
+		}
+	}
+
 	const handleBlur = (e, idx) => {
 		const newIgns = [...currIgns]
 		newIgns[idx] = e.target.value === "" ? "" : e.target.value
@@ -34,9 +42,12 @@ const SelectedAgents = ({ selected }) => {
 								<input
 									type='text'
 									onBlur={(e) => handleBlur(e, int)}
+									onKeyDown={(e) => handleInput(e, int)}
 								/>
 							) : (
-								<h3 onClick={() => setEditIdx(int)}>
+								<h3
+									onClick={() => setEditIdx(int)}
+									className='editIgn'>
 									{currIgns?.[int] == null ||
 									currIgns[int] === ""
 										? "Click to enter IGN"
