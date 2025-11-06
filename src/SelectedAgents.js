@@ -43,7 +43,7 @@ const SelectedAgents = ({ selected }) => {
 										: currIgns[int]}
 								</h3>
 							)}
-							<h3>{name ?? ""}</h3>
+							<h3>{name ?? "Picking..."}</h3>
 						</div>
 					</div>
 				)
