@@ -1,7 +1,17 @@
 import { classNames, agentsMap } from "./util"
+import { useState } from "react"
 
 const SelectedAgents = ({ selected }) => {
 	const numPlayers = selected.length
+	const currIgns = sessionStorage.getItem("igns")?.split(",") ?? []
+	const [editIdx, setEditIdx] = useState(null)
+
+	const handleBlur = (e, idx) => {
+		const newIgns = [...currIgns]
+		newIgns[idx] = e.target.value === "" ? "" : e.target.value
+		sessionStorage.setItem("igns", newIgns.join())
+		setEditIdx(null)
+	}
 
 	return (
 		<div className='selectedGrid'>
@@ -19,7 +29,22 @@ const SelectedAgents = ({ selected }) => {
 									: undefined,
 							}}
 						/>
-						<h3>{name ?? ""}</h3>
+						<div className='agentAndIgn'>
+							{editIdx === int ? (
+								<input
+									type='text'
+									onBlur={(e) => handleBlur(e, int)}
+								/>
+							) : (
+								<h3 onClick={() => setEditIdx(int)}>
+									{currIgns?.[int] == null ||
+									currIgns[int] === ""
+										? "Click to enter IGN"
+										: currIgns[int]}
+								</h3>
+							)}
+							<h3>{name ?? ""}</h3>
+						</div>
 					</div>
 				)
 			})}

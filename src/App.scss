@@ -147,7 +147,8 @@
 			justify-content: center;
 			align-items: flex-start;
 			margin-bottom: 2rem;
-			width: 225px;
+			width: 250px;
+			position: relative;
 
 			.selectedAgentContainer {
 				display: flex;
@@ -186,6 +187,21 @@
 					background-size: contain;
 					box-shadow: 8px 8px 14px;
 					margin-right: 1rem;
+				}
+
+				.agentAndIgn {
+					position: absolute;
+					white-space: nowrap;
+					text-align: left;
+					left: 120px;
+				}
+
+				input {
+					font-family: "Chewy";
+					padding: 5px;
+					width: 150px;
+					font-size: 16px;
+					color: black !important;
 				}
 			}
 		}
